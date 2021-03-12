@@ -38,7 +38,7 @@ body.dark-theme .query__section {
   background-color: var(--secondaryDark);
 }
 
-body.dark-theme th {
+/* body.dark-theme th {
   background-color: #f73378;
 }
 
@@ -48,7 +48,7 @@ body.dark-theme tr:nth-child(even) {
 
 body.dark-theme tr:nth-child(odd) {
   background-color: var(--secondaryAccent);
-}
+} */
 
 body.dark-theme .sidebar {
   background-color: var(--secondaryDark);

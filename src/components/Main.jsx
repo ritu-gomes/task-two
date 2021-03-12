@@ -1,12 +1,17 @@
 import React from "react";
 import QuerySection from "./QuerySection";
 import Table from "./Table";
-function Main({ tablename }) {
+function Main({ tablename, setTablename, isExecuted, setExecuted }) {
   return (
     <div className="main__ui">
-      <QuerySection tablename={tablename} />
+      <QuerySection
+        tablename={tablename}
+        isExecuted={isExecuted}
+        setExecuted={setExecuted}
+        setTablename={setTablename}
+      />
       <div className="result__table__section">
-        <Table />
+        <>{isExecuted ? <Table /> : null}</>
       </div>
     </div>
   );

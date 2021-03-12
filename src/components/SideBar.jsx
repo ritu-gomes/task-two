@@ -12,7 +12,7 @@ import FlightTakeoffIcon from "@material-ui/icons/FlightTakeoff";
 import LocalShippingIcon from "@material-ui/icons/LocalShipping";
 import PublicIcon from "@material-ui/icons/Public";
 
-const SideBar = ({ isSidebar, tablename, setTablename }) => {
+const SideBar = ({ isSidebar, tablename, setTablename, setExecuted }) => {
   const files = [
     { id: 1, title: "Categories", Icon: CategoryIcon },
     { id: 2, title: "Customers", Icon: PeopleIcon },
@@ -37,6 +37,7 @@ const SideBar = ({ isSidebar, tablename, setTablename }) => {
                 Icon={item.Icon}
                 tablename={tablename}
                 setTablename={setTablename}
+                setExecuted={setExecuted}
               />
             );
           })}
