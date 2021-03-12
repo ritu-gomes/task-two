@@ -1,6 +1,6 @@
 import React from "react";
 import { readRemoteFile } from "react-papaparse";
-import axios from "axios";
+// import axios from "axios";
 import TD from "./TD";
 
 function Table() {

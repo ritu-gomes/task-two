@@ -4,7 +4,9 @@ import { IconButton } from "@material-ui/core";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
 import WbSunnyIcon from "@material-ui/icons/WbSunny";
 
-function Navbar() {
+import CloseIcon from "@material-ui/icons/Close";
+
+function Navbar({ isSidebar, setSidebar }) {
   const [isDark, setDark] = React.useState(false);
 
   // handle Dark & Light Theme
@@ -27,8 +29,14 @@ function Navbar() {
     <div className="navbar">
       <div className="navbar__wrapper">
         <div className="navbar__left">
-          <IconButton>
-            <MenuIcon style={{ fill: "#fff" }} />
+          <IconButton
+            onClick={() => (isSidebar ? setSidebar(false) : setSidebar(true))}
+          >
+            {isSidebar ? (
+              <CloseIcon style={{ fill: "#fff" }} />
+            ) : (
+              <MenuIcon style={{ fill: "#fff" }} />
+            )}
           </IconButton>
           <span className="brand__name">Live SQL</span>
         </div>

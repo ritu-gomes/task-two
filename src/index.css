@@ -49,3 +49,24 @@ body.dark-theme tr:nth-child(even) {
 body.dark-theme tr:nth-child(odd) {
   background-color: var(--secondaryAccent);
 }
+
+body.dark-theme .sidebar {
+  background-color: var(--secondaryDark);
+}
+body.dark-theme .sidenav__option {
+  background-color: var(--secondaryDark);
+
+  transition: all 0.3s ease-in-out;
+}
+body.dark-theme .sidenav__option:hover {
+  color: #000;
+  font-weight: 900;
+}
+body.dark-theme .option__active {
+  background-color: #161d34;
+  color: #fff;
+}
+body.dark-theme .option__active:hover {
+  color: #fff;
+  font-weight: 900;
+}
