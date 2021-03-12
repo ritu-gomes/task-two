@@ -22,6 +22,8 @@ function App() {
         setTablename={setTablename}
         isExecuted={isExecuted}
         setExecuted={setExecuted}
+        isSidebar={isSidebar}
+        setSidebar={setSidebar}
       />
     </div>
   );

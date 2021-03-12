@@ -6,11 +6,18 @@ import Snackbar from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 
-function QuerySection({ tablename, isExecuted, setExecuted, setTablename }) {
+function QuerySection({
+  tablename,
+  isExecuted,
+  setExecuted,
+  setTablename,
+  setFab,
+}) {
   const [open, setOpen] = React.useState(false);
   const handleExecStop = () => {
     setExecuted(false);
     setTablename("");
+    setFab(false);
   };
 
   const handleExceStart = () => {
