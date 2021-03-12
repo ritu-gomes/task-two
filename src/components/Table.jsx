@@ -1,6 +1,31 @@
 import React from "react";
+import { readRemoteFile } from "react-papaparse";
+import axios from "axios";
+import TD from "./TD";
 
 function Table() {
+  //   console.log(csvJSON(csv));
+
+  const [data, setData] = React.useState(null);
+
+  React.useEffect(() => {
+    async function getCSV(filename) {
+      readRemoteFile(
+        `https://raw.githubusercontent.com/graphql-compose/graphql-compose-examples/master/examples/northwind/data/csv/${filename}.csv`,
+        {
+          complete: (results) => {
+            console.log("Results:", results);
+            setData(results.data);
+          },
+        }
+      );
+    }
+
+    getCSV("customers");
+  }, []);
+
+  data && console.log(data);
+
   return (
     <table>
       <thead>
@@ -13,41 +38,10 @@ function Table() {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>The Making</td>
-          <td>May 23</td>
-          <td>Drama</td>
-          <td>4.2</td>
-          <td>521</td>
-        </tr>
-        <tr>
-          <td>Final Hour</td>
-          <td>May 28</td>
-          <td>Thriller</td>
-          <td>3.8</td>
-          <td>118</td>
-        </tr>
-        <tr>
-          <td>Springland</td>
-          <td>June 2</td>
-          <td>Comedy</td>
-          <td>4.4</td>
-          <td>643</td>
-        </tr>
-        <tr>
-          <td>The Doll</td>
-          <td>June 18</td>
-          <td>Thriller</td>
-          <td>2.9</td>
-          <td>722</td>
-        </tr>
-        <tr>
-          <td>Stoplight</td>
-          <td>June 21</td>
-          <td>Comedy</td>
-          <td>3.1</td>
-          <td>368</td>
-        </tr>
+        {data &&
+          data.map((item) => {
+            return <TD />;
+          })}
       </tbody>
     </table>
   );
