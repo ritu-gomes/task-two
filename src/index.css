@@ -31,7 +31,7 @@ body.light-theme .MuiFab-primary {
   background-color: #4dabf5;
 }
 body.dark-theme .sidenav {
-  background-color: var(--secondaryAccent);
+  background-color: #ccc;
 }
 
 body.dark-theme .query__section {
@@ -58,7 +58,20 @@ body.dark-theme .sidenav__option {
 
   transition: all 0.3s ease-in-out;
 }
+body.light-theme .sidenav__option {
+  background-color: var(--primaryLight);
+
+  transition: all 0.3s ease-in-out;
+}
+body.light-theme .sidenav__option {
+  color: #fff;
+  background-color: var(--primaryLight);
+}
 body.dark-theme .sidenav__option:hover {
+  color: #000;
+  font-weight: 900;
+}
+body.light-theme .sidenav__option:hover {
   color: #000;
   font-weight: 900;
 }
@@ -66,7 +79,15 @@ body.dark-theme .option__active {
   background-color: #161d34;
   color: #fff;
 }
+body.light-theme .option__active {
+  background-color: #161d34;
+  color: #fff;
+}
 body.dark-theme .option__active:hover {
+  color: #fff;
+  font-weight: 900;
+}
+body.light-theme .option__active:hover {
   color: #fff;
   font-weight: 900;
 }
