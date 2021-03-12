@@ -29,8 +29,21 @@ body.light-theme .MuiFab-primary {
   background-color: #4dabf5;
 }
 body.dark-theme .sidenav {
-  background-color: #999999;
+  background-color: var(--secondaryAccent);
 }
-body.dark-theme .result__table__section {
-  background-color: #999999;
+
+body.dark-theme .query__section {
+  background-color: var(--secondaryDark);
+}
+
+body.dark-theme th {
+  background-color: #f73378;
+}
+
+body.dark-theme tr:nth-child(even) {
+  background-color: var(--secondaryDark);
+}
+
+body.dark-theme tr:nth-child(odd) {
+  background-color: var(--secondaryAccent);
 }

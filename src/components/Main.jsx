@@ -1,6 +1,7 @@
 import React from "react";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import { Fab } from "@material-ui/core";
+import Table from "./Table";
 function Main() {
   return (
     <div className="main__ui">
@@ -15,7 +16,7 @@ function Main() {
         </div>
       </div>
       <div className="result__table__section">
-        <h1>Table Comes Here</h1>
+        <Table />
       </div>
     </div>
   );
