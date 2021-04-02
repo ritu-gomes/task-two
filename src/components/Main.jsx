@@ -5,6 +5,8 @@ import empty from "../empty.svg";
 import { Fab } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import AddIcon from "@material-ui/icons/Add";
+
+
 function Main({
   tablename,
   setTablename,
@@ -28,9 +30,8 @@ function Main({
   document.title = tablename ? tablename.toUpperCase() : "Live SQL";
   return (
     <div
-      className={`main__ui ${!isExecuted && "centered__ui"} ${
-        !isFab && "centered__ui__extended"
-      }`}
+      className={`main__ui ${!isExecuted && "centered__ui"} ${!isFab && "centered__ui__extended"
+        }`}
       onClick={handleSidebar}
     >
       {isFab && (
