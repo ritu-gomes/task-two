@@ -33,6 +33,7 @@ const SideBar = ({ isSidebar, tablename, setTablename, setExecuted, setDataFile 
           {files.map((item, index) => {
             return (
               <Option
+                key={index}
                 title={item.title}
                 Icon={item.Icon}
                 tablename={tablename}
