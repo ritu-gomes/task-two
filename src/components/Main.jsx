@@ -14,6 +14,7 @@ function Main({
   setExecuted,
   isSidebar,
   setSidebar,
+  dataFile,
 }) {
   /*Initial State for Edit Fab Button */
   const [isFab, setFab] = React.useState(false);
@@ -46,7 +47,7 @@ function Main({
       <div className="result__table__section">
         <>
           {isExecuted ? (
-            <Table />
+            <Table dataFile={dataFile} />
           ) : (
             <img src={empty} alt="Blank__Result" className="blank__query" />
           )}

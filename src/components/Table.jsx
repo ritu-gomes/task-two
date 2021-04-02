@@ -14,8 +14,8 @@ const useStyles = makeStyles({
   },
 });
 
-async function getData(name) {
-  let data = await fetch(`/data/${name}.csv`)
+async function getData(dataFile) {
+  let data = await fetch(`/data/${dataFile}`)
     .then(response => response.text())
     .then(csvString => {
       const data = {
@@ -33,7 +33,7 @@ async function getData(name) {
   return data
 }
 
-export default function BasicTable() {
+export default function BasicTable({ dataFile }) {
   const classes = useStyles();
 
   const [data, setData] = useState({
@@ -42,8 +42,8 @@ export default function BasicTable() {
   })
 
   useEffect(() => {
-    getData('customers').then(data => setData(data));
-  }, [])
+    getData(dataFile).then(data => setData(data));
+  }, [dataFile])
 
   return (
     <TableContainer component={Paper}>

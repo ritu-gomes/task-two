@@ -12,19 +12,19 @@ import FlightTakeoffIcon from "@material-ui/icons/FlightTakeoff";
 import LocalShippingIcon from "@material-ui/icons/LocalShipping";
 import PublicIcon from "@material-ui/icons/Public";
 
-const SideBar = ({ isSidebar, tablename, setTablename, setExecuted }) => {
+const SideBar = ({ isSidebar, tablename, setTablename, setExecuted, setDataFile }) => {
   const files = [
-    { id: 1, title: "Categories", Icon: CategoryIcon },
-    { id: 2, title: "Customers", Icon: PeopleIcon },
-    { id: 3, title: "Emp Territories", Icon: LocationCityIcon },
-    { id: 4, title: "Employees", Icon: EmojiPeopleIcon },
-    { id: 5, title: "ORDERS DETAILS", Icon: InfoIcon },
-    { id: 6, title: "Orders", Icon: ViewModuleIcon },
-    { id: 7, title: "Products", Icon: DonutLargeIcon },
-    { id: 8, title: "Regions", Icon: LanguageIcon },
-    { id: 9, title: "Shippers", Icon: FlightTakeoffIcon },
-    { id: 10, title: "Suppliers", Icon: LocalShippingIcon },
-    { id: 11, title: "Territories", Icon: PublicIcon },
+    { id: 1, title: "Categories", Icon: CategoryIcon, dataFile: "categories.csv" },
+    { id: 2, title: "Customers", Icon: PeopleIcon, dataFile: "customers.csv" },
+    { id: 3, title: "Emp Territories", Icon: LocationCityIcon, dataFile: "employee-territories.csv" },
+    { id: 4, title: "Employees", Icon: EmojiPeopleIcon, dataFile: "employees.csv" },
+    { id: 5, title: "ORDERS DETAILS", Icon: InfoIcon, dataFile: "order-details.csv" },
+    { id: 6, title: "Orders", Icon: ViewModuleIcon, dataFile: "orders.csv" },
+    { id: 7, title: "Products", Icon: DonutLargeIcon, dataFile: "products.csv" },
+    { id: 8, title: "Regions", Icon: LanguageIcon, dataFile: "regions.csv" },
+    { id: 9, title: "Shippers", Icon: FlightTakeoffIcon, dataFile: "shippers.csv" },
+    { id: 10, title: "Suppliers", Icon: LocalShippingIcon, dataFile: "suppliers.csv" },
+    { id: 11, title: "Territories", Icon: PublicIcon, dataFile: "territories.csv" },
   ];
   return (
     <Box boxShadow={1}>
@@ -38,6 +38,8 @@ const SideBar = ({ isSidebar, tablename, setTablename, setExecuted }) => {
                 tablename={tablename}
                 setTablename={setTablename}
                 setExecuted={setExecuted}
+                dataFile={item.dataFile}
+                setDataFile={setDataFile}
               />
             );
           })}
