@@ -5,6 +5,8 @@ import empty from "../empty.svg";
 import { Fab } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import AddIcon from "@material-ui/icons/Add";
+
+
 function Main({
   tablename,
   setTablename,
@@ -12,6 +14,7 @@ function Main({
   setExecuted,
   isSidebar,
   setSidebar,
+  dataFile,
 }) {
   /*Initial State for Edit Fab Button */
   const [isFab, setFab] = React.useState(false);
@@ -28,9 +31,8 @@ function Main({
   document.title = tablename ? tablename.toUpperCase() : "Live SQL";
   return (
     <div
-      className={`main__ui ${!isExecuted && "centered__ui"} ${
-        !isFab && "centered__ui__extended"
-      }`}
+      className={`main__ui ${!isExecuted && "centered__ui"} ${!isFab && "centered__ui__extended"
+        }`}
       onClick={handleSidebar}
     >
       {isFab && (
@@ -45,7 +47,7 @@ function Main({
       <div className="result__table__section">
         <>
           {isExecuted ? (
-            <Table />
+            <Table dataFile={dataFile} />
           ) : (
             <img src={empty} alt="Blank__Result" className="blank__query" />
           )}

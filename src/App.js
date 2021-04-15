@@ -8,6 +8,7 @@ function App() {
   const [isSidebar, setSidebar] = useState(false);
   const [tablename, setTablename] = useState("Categories");
   const [isExecuted, setExecuted] = React.useState(false);
+  const [dataFile, setDataFile] = useState("categories.csv");
   return (
     <div>
       <Navbar isSidebar={isSidebar} setSidebar={setSidebar} />
@@ -16,6 +17,7 @@ function App() {
         tablename={tablename}
         setTablename={setTablename}
         setExecuted={setExecuted}
+        setDataFile={setDataFile}
       />
       <Main
         tablename={tablename}
@@ -24,6 +26,7 @@ function App() {
         setExecuted={setExecuted}
         isSidebar={isSidebar}
         setSidebar={setSidebar}
+        dataFile={dataFile}
       />
     </div>
   );

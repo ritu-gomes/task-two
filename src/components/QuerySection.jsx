@@ -42,7 +42,7 @@ function QuerySection({
   return (
     <>
       <div className="querySection">
-        <div className="query__section" contentEditable="true">
+        <div className="query__section" contentEditable="true" suppressContentEditableWarning={true}>
           <span>SELECT * FROM {tablename}</span>
         </div>
         <div className="querySection__footer">
